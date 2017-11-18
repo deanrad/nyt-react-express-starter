@@ -44,6 +44,10 @@ app.post("/api/saved", (req, res) => {
     res.json(err)
   })
 })
+
+app.get('/api/saved', (req, res) => {
+  Article.find({}).then(articles => res.json(articles))
+})
 /** end routes */
 
 // Send every request to the React app
