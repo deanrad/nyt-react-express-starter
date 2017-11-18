@@ -24,6 +24,11 @@ mongoose.connect(
   }
 );
 
+/** DB */
+const db = require('./models')
+console.log(db.Article)
+/** END DB */
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
