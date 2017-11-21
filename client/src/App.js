@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  componentDidMount() {
+    axios.get('/api/saved').then(response => {
+      console.log(response.data)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
   render() {
     return (
       <div className="App">
