@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const ShowScraped = (props) => {
+  return (<div>TODO Scraped stuff goes here </div>)
+}
+
+const DoScrape = () => {
+  return (<button>Scrape it!</button>)
+}
 
 class App extends Component {
   componentDidMount() {
@@ -17,11 +26,18 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Scraper Homework Spike</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={ShowScraped} />
+              <Route exact path="/scrape" component={DoScrape} />
+            </Switch>
+          </div>
+        </Router>
+
       </div>
     );
   }
