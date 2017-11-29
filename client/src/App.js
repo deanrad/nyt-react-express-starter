@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 const ShowScraped = (props) => {
-  return (<div>TODO Scraped stuff goes here </div>)
+  return (<div>TODO Scraped stuff goes here
+    <Link to="/scrape">Do a scrape</Link>
+     </div>)
 }
 
 const DoScrape = () => {
-  return (<button>Scrape it!</button>)
+  return (<div>
+    <Link to="/">Go Home!</Link>
+    <button>Scrape it!</button>
+    </div>)
 }
 
 class App extends Component {
@@ -24,11 +29,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Scraper Homework Spike</h2>
-        </div>
-
         <Router>
           <div>
             <Switch>
@@ -37,7 +37,6 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-
       </div>
     );
   }
