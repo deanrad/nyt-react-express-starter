@@ -27,8 +27,13 @@ class App extends Component {
   }
 
   render() {
+    const authUrl = document.location.href.includes("localhost")
+    ? "//localhost:3001/auth/google"
+    : "/auth/google";
+
     return (
       <div className="App">
+      <h3><a href={authUrl}>Login WIth Google</a></h3>
         <Router>
           <div>
             <Switch>
